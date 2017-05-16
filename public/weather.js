@@ -1,21 +1,39 @@
-'use strict'
+$(document).ready(function() {
 
-	const city = process.argv[2];  // return the three element in the process.argv array which is name of city following the convention - "node weather city"
+    $('#submitWeather').click(function() {
+        let city = $('#city').val();
+        if (city != '') {
+            $.ajax({
+                url: "http://api.openweathermap.org/data/2.5/forecast/?q=" + city + "&units=metric" + "&APPID=98b64b8a1094b7b9e011578dc1ca69b8",
+                type: "GET",
+                dataType: "jsonp",
+                success: function(data) {
+                    let widget = show(data);
+                    $("#showWeather").html(widget);
+                    $('#city').val('');
+                    // for (var i = 0; i <= data.list.length; i++) {
 
-	if (!city) //check if a city is provided
-	{	
-		return console.error('Please provide city');
-	}
+                    //     console.log(data.list[i]);
 
-	const weather = require('./weather-module'); // require the weather-module.js file
+                    // }
+                }
 
-	const apiKey = require('./config.json').openWeatherApiKey; // require the open weather api key from the config.json file
 
-	weather(apiKey, city, (error, results)=> 
-	{
-	  results.list.forEach((forecast)=> // run a forEach loop to return the date text and main temp from the json file requested.
-	  {
-		console.log(forecast.dt_txt, forecast.main.temp, 'C');// display the data text, main temperature in celcius  and string C as the unit.
-	  })
-	})
+            });
 
+        } else {
+            $('#error').html('Field can not be empty');
+        }
+    });
+
+});
+
+function show(data) {
+
+    $('#showWeather').empty();
+    $.each(data.list, function(i, item) {
+        $("#showWeather").append(
+            "<div class='col-md-2' style='background-color: #999; margin: 2px;'><h5>" + item.main.temp + "</h5><h5>" + item.weather[0].main + "</h5><h5>" + item.weather[0].description + "</h5></div>"
+        )
+    });
+}
