@@ -1,3 +1,12 @@
+window.onload = function() {
+    $(function() {
+        if (window.location.protocol === "https:")
+            window.location.protocol = "http";
+    });
+}
+
+
+
 $(document).ready(function() {
 
     $('#submitWeather').click(function() {
@@ -11,11 +20,7 @@ $(document).ready(function() {
                     let widget = show(data);
                     $("#showWeather").html(widget);
                     $('#city').val('');
-                    // for (var i = 0; i <= data.list.length; i++) {
 
-                    //     console.log(data.list[i]);
-
-                    // }
                 }
 
 
