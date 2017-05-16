@@ -2,35 +2,56 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Current Weather Application</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <title>TEDNg</title>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="jumbotron" style="margin-bottom:0px; color:white; background-color: #4aa1f3;">
-        <h2 class="text-center" style="font-size:50px; font-weight:600;">Get Weather</h2>
-    </div>
     <div class="container">
-        <div class="row" style="margin-bottom:20px;">
-            <h3 class="text-center text-primary">Enter City Name</h3>
-            <span id="error"></span>
-        </div>
-        <div class="row form-group form-inline col-md-12" id="rowDiv">
-            <input type="search" name="city" id="city" class="form-control" placeholder="City Name">
-            <button id="submitWeather" class="btn btn-primary">Search City</button>
-        </div>
-        <div class="container">
-            <div class="row" id="showWeather">
 
+
+        <h3>Login to Check Weather Forecast</h3>
+
+        <form id="recommendationForm">
+            <div class="form-group">
+                <label for="talkTitle">Title</label>
+                <input class="form-control" id="talkTitle" placeholder="Title of the talk">
             </div>
-        </div>
+
+            <div class="form-group">
+                <label for="talkPresenter">Presenter</label>
+                <input class="form-control" id="talkPresenter" placeholder="Name of the presenter">
+            </div>
+
+            <div class="form-group">
+                <label for="talkRecommender">Recommender</label>
+                <input class="form-control" id="talkRecommender" placeholder="Name of the recommender">
+            </div>
+            <div class="form-group">
+                <label for="talkRating">Rating</label>
+                <input class="form-control" id="talkRating" placeholder="Rate this">
+            </div>
+
+            <div class="form-group">
+                <label for="talkLink">Link</label>
+                <input type="url" class="form-control" id="talkLink" placeholder="Link to a recording of the talk">
+            </div>
+
+
+
+
+
+            <!-- When you click this button, trigger the submit event on this form. -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="weather.js"></script>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+    <script src="app.js"></script>
+
 </body>
 
 </html>
