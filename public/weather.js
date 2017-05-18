@@ -47,7 +47,7 @@ function show(data) {
 
         $("#showWeather").append(
             "<center><div class='col-md-1' style=' margin: 2px; background-color: wheat;'>" +
-            "<h5> " + item.dt + " </h5><h5> " + item.temp.day + " </h5>" +
+            "<h5> " + item.dt + " </h5><h5> " + item.temp.day + " °C </h5>" +
             "<h5> " + item.weather[0].main + " </h5><h5> " + item.pressure + " </h5>" +
             "<h5> " + item.humidity + " </h5><h5></div></center>"
 
