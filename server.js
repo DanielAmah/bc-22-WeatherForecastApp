@@ -1,5 +1,14 @@
 var express = require('express');
 var app = express();
+var firebase = require("firebase");
+
+
+
+
+
+
+
+
 
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
