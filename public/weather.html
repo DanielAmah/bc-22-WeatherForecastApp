@@ -10,26 +10,78 @@
 </head>
 
 <body>
-    <div class="jumbotron" style="margin-bottom:0px; color:white; background-color: #4aa1f3;">
-        <h2 class="text-center" style="font-size:50px; font-weight:600;">Get Weather</h2>
-    </div>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">MyWeather</a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
     <div class="container">
-        <div class="row" style="margin-bottom:20px;">
-            <h3 class="text-center text-primary">Enter City Name</h3>
-            <span id="error"></span>
-        </div>
-        <div class="row form-group form-inline col-md-12" id="rowDiv">
-            <input type="search" name="city" id="city" class="form-control" placeholder="City Name">
-            <button id="submitWeather" class="btn btn-primary">Search City</button>
-        </div>
-        <div class="container">
-            <div class="row" id="showWeather">
+        <div id="aside">
+            <div id="search">
+                <h3>Recent Weather Search</h3>
+                Result here
+            </div>
+
+            <div id="GeoWeather">
+                <h3>Your weather</h3>
+                <div class="main-container">
+                    <div id="current-weather" class="container-fluid" style="background-color: wheat;">
+                        <h2 id="current" class="current-weather">Current weather: <br><span id="local-city">"City here"</span></h2>
+                        <h3><span><a id="temperature" href=#></a></span><img id="weatherIcon"></img>
+                        </h3>
+                        <h4 id="descriptor">Description</h4>
+                    </div>
+                </div>
 
             </div>
+
+        </div>
+
+
+        <div id="main">
+
+
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" name="search" id="city">
+                <div class="input-group-btn">
+                    <button id="submitWeather" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="main-container">
+                <div id="current-weather" class="container-fluid" style="background-color: wheat; text-align:center; width: 100%;">
+                    <h3 id="today">"Date"<br><span id="cityName">"City here"</span></h3>
+
+                    <span id="temp"></span>
+                    <h3 id="weather"></h3>
+                    <h3 id="pressure"></h3>
+                    <h3 id="humidity"></h3>
+
+
+                </div>
+            </div>
+
+            <div id="showWeather"></div>
+
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="geoweather.js"></script>
     <script src="weather.js"></script>
 </body>
 

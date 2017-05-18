@@ -13,7 +13,7 @@ $(document).ready(function() {
         let city = $('#city').val();
         if (city != '') {
             $.ajax({
-                url: "http://api.openweathermap.org/data/2.5/forecast/?q=" + city + "&units=metric" + "&APPID=98b64b8a1094b7b9e011578dc1ca69b8",
+                url: "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&mode=json&units=metric&cnt=7" + "&APPID=98b64b8a1094b7b9e011578dc1ca69b8",
                 type: "GET",
                 dataType: "jsonp",
                 success: function(data) {
@@ -35,10 +35,24 @@ $(document).ready(function() {
 
 function show(data) {
 
-    $('#showWeather').empty();
+    $("#cityName").html(data.city.name);
+    $("#temp").html(data.list[0].temp.day);
+    $("#weather").html(data.list[0].weather[0].main);
+    $("#pressure").html(data.list[0].pressure);
+    $("#humidity").html(data.list[0].humidity);
+
+    $("#showWeather").empty();
+
     $.each(data.list, function(i, item) {
+
         $("#showWeather").append(
-            "<div class='col-md-2' style='background-color: #999; margin: 2px;'><h5>" + item.main.temp + "</h5><h5>" + item.weather[0].main + "</h5><h5>" + item.weather[0].description + "</h5></div>"
+            "<center><div class='col-md-1' style=' margin: 2px; background-color: wheat;'>" +
+            "<h5> " + item.dt + " </h5><h5> " + item.temp.day + " </h5>" +
+            "<h5> " + item.weather[0].main + " </h5><h5> " + item.pressure + " </h5>" +
+            "<h5> " + item.humidity + " </h5><h5></div></center>"
+
         )
+
+
     });
 }
