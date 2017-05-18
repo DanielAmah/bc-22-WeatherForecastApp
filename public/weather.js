@@ -13,7 +13,7 @@ $(document).ready(function() {
         let city = $('#city').val();
         if (city != '') {
             $.ajax({
-                url: "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&mode=json&units=metric&cnt=7" + "&APPID=98b64b8a1094b7b9e011578dc1ca69b8",
+                url: "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&mode=json&units=metric&cnt=8" + "&APPID=98b64b8a1094b7b9e011578dc1ca69b8",
                 type: "GET",
                 dataType: "jsonp",
                 success: function(data) {
@@ -44,10 +44,11 @@ function show(data) {
     $("#showWeather").empty();
 
     $.each(data.list, function(i, item) {
+		var icon = ("<img src='http://openweathermap.org/img/w/" + item.weather[0].icon + ".png'>");
 
         $("#showWeather").append(
-            "<center><div class='col-md-1' style=' margin: 2px; background-color: wheat;'>" +
-            "<h5> " + item.dt + " </h5><h5> " + item.temp.day + " </h5>" +
+            "<center><div class='col-md-1' style=' margin: 2px; background-color: wheat; opacity: 0.8;'>" +
+            "<h5> " + item.dt + " </h5><h5> " + item.temp.day +"°C &nbsp;</h5>"+ icon +
             "<h5> " + item.weather[0].main + " </h5><h5> " + item.pressure + " </h5>" +
             "<h5> " + item.humidity + " </h5><h5></div></center>"
 

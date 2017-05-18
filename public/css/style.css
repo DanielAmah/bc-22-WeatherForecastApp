@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Passion+One');
+
+
+body
+{
+  
+  font-family:Montserrat; 
+  color:#333;
+ 
+}
+
 #rowDiv {
     margin: auto;
     text-align: center;

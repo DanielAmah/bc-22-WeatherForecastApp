@@ -1,10 +1,7 @@
-var express = require('express');
-var app = express();
-var firebase = require("firebase");
+const express = require('express');
 
 
-
-
+const app = express();
 
 
 
