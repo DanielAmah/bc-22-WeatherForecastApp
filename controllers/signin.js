@@ -18,8 +18,12 @@
 
 
 
-    btnsignin.addEventListener('click', e => {
-
+    signin.addEventListener('click', e => {
+		setTimeout(function(){ 
+		location.href="public/weather.html"; 
+		}, 6000);
+			
+/*
         let email = Email.value;
         let pass = Password.value;
         let auth = firebase.auth();
@@ -27,7 +31,7 @@
         let promise = auth.signInWithEmailAndPassword(email, pass);
         promise.catch(e => console.log(e.message));
 
-
+*/
 
     });
 
