@@ -58,7 +58,7 @@ var formattedDate1 = weekday[pubDate.getDay()] + ' '
 	
 	$("#icon").html("<img src='" + iconUrl2  + "'>");
     $("#weather").html(data.list[0].weather[0].main);
-    $("#pressure").html(data.list[0].pressure);
+    $("#pressure").html(data.list[0].pressure + " hPa");
    
 
     $("#showWeather").empty();
@@ -86,7 +86,7 @@ var formattedDate = weekday[pubDate.getDay()] + ' '
         $("#showWeather").append(
             "<center><div class='col-md-1' style=' margin: 2px; background-color: wheat;'>" +
             "<h5> " + formattedDate + " </h5><h5> " + item.temp.day + " °C </h5>" + "<img src='" + iconUrl  + "'>" +
-            "<h5> " + item.weather[0].main + " </h5><h5> " + item.pressure + " </h5></div></center>"
+            "<h5> " + item.weather[0].main + " </h5><h5> " + item.pressure + " hPa</h5></div></center>"
 
         )
 
