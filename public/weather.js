@@ -34,22 +34,24 @@ $(document).ready(function() {
 });
 
 function show(data) {
-
+	$("#date").html(data.list[0].dt);
     $("#cityName").html(data.city.name);
-    $("#temp").html(data.list[0].temp.day);
+    $("#temp").html(data.list[0].temp.day + "°C");
     $("#weather").html(data.list[0].weather[0].main);
     $("#pressure").html(data.list[0].pressure);
-    $("#humidity").html(data.list[0].humidity);
+   
 
     $("#showWeather").empty();
 
     $.each(data.list, function(i, item) {
-
+		
+		var iconCode = item.weather[0].icon;
+		var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+	
         $("#showWeather").append(
             "<center><div class='col-md-1' style=' margin: 2px; background-color: wheat;'>" +
-            "<h5> " + item.dt + " </h5><h5> " + item.temp.day + " °C </h5>" +
-            "<h5> " + item.weather[0].main + " </h5><h5> " + item.pressure + " </h5>" +
-            "<h5> " + item.humidity + " </h5><h5></div></center>"
+            "<h5> " + item.dt + " </h5><h5> " + item.temp.day + " °C </h5>" + "<img src='" + iconUrl  + "'>" +
+            "<h5> " + item.weather[0].main + " </h5><h5> " + item.pressure + " </h5></div></center>"
 
         )
 
