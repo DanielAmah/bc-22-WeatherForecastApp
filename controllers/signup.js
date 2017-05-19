@@ -14,26 +14,19 @@
     let btnsignin = document.getElementById('btnsignin');
     let btnsignup = document.getElementById('btnsignup');
 
-    btnsignup.addEventListener('click', e => {
+    signup.addEventListener('click', e => {
 
-        let email = Email.value;
-        let pass = password.value;
-        let auth = firebase.auth();
-
-        let promise = auth.createUserWithEmailAndPassword(email, pass);
-        promise.catch(e => console.log(e.message));
+				setTimeout(function(){ 
+				location.href="public/index.html"; 
+				}, 6000);
 
     })
 
-    btnsignin.addEventListener('click', e => {
-
-        let email = Email.value;
-        let pass = password.value;
-        let auth = firebase.auth();
-
-        let promise = auth.signInWithEmailAndPassword(email, pass);
-        promise.catch(e => console.log(e.message));
-        promise.then(user => window.location = '../weather.html');
+    signin.addEventListener('click', e => {
+		
+		 setTimeout(function(){ 
+				location.href="public/index.html"; 
+				}, 7000);
 
     })
 

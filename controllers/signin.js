@@ -35,6 +35,14 @@
 
     });
 
+	
+	signup.addEventListener('click', e => {
+
+        setTimeout(function(){ 
+		location.href="public/index.html"; 
+		}, 6000);
+
+    })
 
 
     firebase.auth().onAuthStateChanged(firebaseUser => {
